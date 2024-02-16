@@ -18,6 +18,7 @@ public class SolutionRunner {
              count++;           
              int element = scanner.nextInt();
              numbers.add(element);
+             //System.out.println(element+", ");
          }
 		 
          // Close the scanner
@@ -30,6 +31,7 @@ public class SolutionRunner {
          System.out.println("median "+ median(numbers));
          System.out.println("avg " + avg(numbers));
          System.out.println("max ascending order "  + maxAscendingSequence(numbers));
+         System.out.println("max descending order " + maxDescendingSequence(numbers));
  		//int maxValue = findMaxValue(arr);
 // 		System.out.println("max value " + maxValue);
 // 		
@@ -76,7 +78,8 @@ public class SolutionRunner {
 //		return maxValue;
 //	}
 	
-	public static double median(ArrayList<Integer> arr) {
+	public static double median(ArrayList<Integer> arr1) {
+		ArrayList<Integer> arr = new ArrayList<>(arr1);
 		Collections.sort(arr);
 		//Arrays.sort(arr);
 		int arrLength = arr.size();
@@ -152,7 +155,38 @@ public class SolutionRunner {
 		for(int i=start; i <=end; i++) {
 			result.add(arr.get(i));
 		}
-		//System.out.println(result);
+		System.out.println(result);
+		return maxCount;
+	}
+	
+	public static int maxDescendingSequence(ArrayList<Integer> arr) {
+		if(arr.size() <= 0) {
+			return arr.size();
+		} 
+		//System.out.println( arr);
+		int value = arr.get(0);		
+		int count = 1;
+		int maxCount = 0;
+		int end = 0;
+		for(int i=1; i<arr.size(); i++) {
+			if(value > arr.get(i) ) {
+				count++;
+				if(maxCount < count)
+					end = i;
+			}else {
+				maxCount = Math.max(maxCount, count);
+				count = 1;
+			}
+			value = arr.get(i);
+		}
+		maxCount = Math.max(maxCount, count);
+		int start = end - maxCount +1;
+		ArrayList<Integer> result = new ArrayList<>();
+		for(int i=start; i <=end; i++) {
+			result.add(arr.get(i));
+		}
+		System.out.println("start: "+ start + "/ end: "+ end);
+		System.out.println(result);
 		return maxCount;
 	}
 }
