@@ -24,20 +24,13 @@ public class SolutionRunner {
          // Close the scanner
          scanner.close();
          
-         System.out.println(count);
-         
          System.out.println("min value " + findMinValue(numbers));
          System.out.println("max value " + findMaxValue(numbers));
          System.out.println("median "+ median(numbers));
          System.out.println("avg " + avg(numbers));
          System.out.println("max ascending order "  + maxAscendingSequence(numbers));
          System.out.println("max descending order " + maxDescendingSequence(numbers));
- 		//int maxValue = findMaxValue(arr);
-// 		System.out.println("max value " + maxValue);
-// 		
-// 		System.out.println("median value " + median(arr));
-// 		
-// 		System.out.println("average value " + avg(arr));
+
 	}
 
 	public static int findMinValue(ArrayList<Integer> numbers) {
@@ -48,11 +41,6 @@ public class SolutionRunner {
 				minValue = numbers.get(i);
 			}
 		}
-//		for(int i=1; i<numbers.length(); i++) {
-//			if(minValue > numbers[i]) {
-//				minValue = numbers[i];
-//			}
-//		}
 		
 		return minValue;
 	}
@@ -67,16 +55,6 @@ public class SolutionRunner {
 		
 		return maxValue;
 	}
-//	public static int findMaxValue(int arr[]) {
-//		int maxValue = arr[0];
-//		for(int i=1; i<arr.length;i++) {
-//			if(maxValue < arr[i]) {
-//				maxValue = arr[i];
-//			}
-//		}
-//		
-//		return maxValue;
-//	}
 	
 	public static double median(ArrayList<Integer> arr1) {
 		ArrayList<Integer> arr = new ArrayList<>(arr1);
@@ -92,19 +70,6 @@ public class SolutionRunner {
 		
 		return median;
 	}
-//	public static double median(int[] arr) {
-//		Arrays.sort(arr);
-//		int arrLength = arr.length;
-//		double median;
-//		if(arrLength%2 == 0) {
-//			median = (double)(arr[(arr.length-1)/2] + arr[(arr.length)/2])/2;
-//		}else {
-//			System.out.println(arr.length  + " here weadsfadsfa are");
-//			median =arr[arrLength/2];
-//		}
-//		
-//		return median;
-//	}
 	
 	public static double avg(ArrayList<Integer> arr) {
 		int sum =0;
@@ -116,17 +81,6 @@ public class SolutionRunner {
 		
 		return avg;
 	}
-	
-//	public static double avg(int[] arr) {
-//		int sum =0;
-//		for(int i=0; i< arr.length; i++) {
-//			sum =+ arr[i];
-//		}
-//		
-//		double avg= (double)sum/arr.length;
-//		
-//		return avg;
-//	}
 	
 	public static int maxAscendingSequence(ArrayList<Integer> arr) {
 		if(arr.size() <= 0) {
@@ -163,7 +117,6 @@ public class SolutionRunner {
 		if(arr.size() <= 0) {
 			return arr.size();
 		} 
-		//System.out.println( arr);
 		int value = arr.get(0);		
 		int count = 1;
 		int maxCount = 0;
@@ -185,7 +138,6 @@ public class SolutionRunner {
 		for(int i=start; i <=end; i++) {
 			result.add(arr.get(i));
 		}
-		System.out.println("start: "+ start + "/ end: "+ end);
 		System.out.println(result);
 		return maxCount;
 	}
