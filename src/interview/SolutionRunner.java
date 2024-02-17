@@ -213,7 +213,7 @@ public class SolutionRunner {
 	 */
 	public static int maxDescendingSequence(ArrayList<Integer> arr) {
 		//if number of elements in ArrayList equals 1 of 0 return arr.size as sequence
-		if(arr.size() <= 0) {
+		if(arr.size() <= 1) {
 			return arr.size();
 		} 
 		int value = arr.get(0);		
