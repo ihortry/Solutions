@@ -18,7 +18,6 @@ public class SolutionRunner {
              count++;           
              int element = scanner.nextInt();
              numbers.add(element);
-             //System.out.println(element+", ");
          }
 		 
          // Close the scanner
@@ -59,7 +58,6 @@ public class SolutionRunner {
 	public static double median(ArrayList<Integer> arr1) {
 		ArrayList<Integer> arr = new ArrayList<>(arr1);
 		Collections.sort(arr);
-		//Arrays.sort(arr);
 		int arrLength = arr.size();
 		double median;
 		if(arrLength%2 == 0) {
